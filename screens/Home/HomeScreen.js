@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, FlatList, StatusBar, SafeAreaView } from 'react-native';
+import { Image, Text, View, FlatList, StatusBar, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import moment from 'moment'
 import styles from './styles'
 
 //Demo Data
-const posts = [
+const POSTS = [
     {
         id: "1",
         name: "Joe McKay",
@@ -35,23 +35,23 @@ const posts = [
 
 
 export default function HomeScreen() {
-    renderPost = ({ post }) => {
+    const renderPost = ({ item }) => {
         return (
             <View style={styles.feedItem}>
-                <Image source={post.avatar} style={styles.avatar} />
+                <Image source={require("../../assets/abir.jpg")} style={styles.avatar} />
                 <View style={{ flex: 1 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                         <View>
-                            <Text style={styles.name}>{post.name}</Text>
-                            <Text style={styles.timestamp}>{moment(post.timestamp).fromNow()}</Text>
+                            <Text style={styles.name}>{item.name}</Text>
+                            <Text style={styles.timestamp}>{moment(item.timestamp).fromNow()}</Text>
                         </View>
 
                         <Ionicons name="ios-more" size={24} color="#73788B" />
                     </View>
 
-                    <Text style={styles.post}>{post.text}</Text>
+                    <Text style={styles.post}>{item.text}</Text>
 
-                    <Image source={post.image} style={styles.postImage} resizeMode="cover" />
+                    <Image source={item.image} style={styles.postImage} resizeMode="cover" />
 
                     <View style={{ flexDirection: "row" }}>
                         <Ionicons name="ios-heart-empty" size={24} color="#73788B" style={{ marginRight: 16 }} />
@@ -69,11 +69,10 @@ export default function HomeScreen() {
             </View>
             <FlatList
                 style={styles.feed}
-                data={posts}
+                data={POSTS}
                 renderItem={renderPost}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}></FlatList>
-
         </SafeAreaView>
     )
 }

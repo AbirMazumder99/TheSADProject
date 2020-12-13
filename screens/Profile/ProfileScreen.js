@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native'
+import { Image, Text, Button, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import styles from './styles';
 
 export default function ProfileScreen({navigation}) {
@@ -14,6 +14,8 @@ export default function ProfileScreen({navigation}) {
             ],
             { cancelable: false }
         )
+        // console.log("signout working")
+        // navigation.navigate('Home')
     }
 
     // const signOut = () => {

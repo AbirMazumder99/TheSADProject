@@ -12,6 +12,9 @@ export default function SignUpScreen({navigation}) {
     const onFooterLinkPress = () => {
         navigation.navigate('LogIn')
     }
+    const onRegisterPress = () => {
+        navigation.navigate('LogIn')
+    }
 
     // const onRegisterPress = () => {
     //     if (password !== confirmPassword) {

@@ -10,6 +10,9 @@ export default function LoginScreen({navigation}) {
     const onFooterLinkPress = () => {
         navigation.navigate('SignUp')
     }
+    const onLoginPress = () => {
+        navigation.navigate('SignUp')
+    }
 
     // const onLoginPress = () => {
     //     firebase
