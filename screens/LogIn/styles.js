@@ -5,15 +5,13 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
-    title: {
-
-    },
     logo: {
         flex: 1,
-        height: 120,
-        width: 90,
+        height: 200,
+        width: 200,
         alignSelf: "center",
-        margin: 30
+        margin: 30,
+        borderRadius: 30
     },
     input: {
         height: 48,
@@ -54,5 +52,9 @@ export default StyleSheet.create({
         color: "#788eec",
         fontWeight: "bold",
         fontSize: 16
+    },
+    keyboardScroll: {
+        flex: 1,
+        width: '100%'
     }
 })
