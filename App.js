@@ -13,7 +13,7 @@ import MessageScreen from './screens/Message/MessageScreen';
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
 export default function App() {
-  let user = true;
+  let user = false;
   return (
     <NavigationContainer>
         {user ? (
