@@ -14,13 +14,8 @@ export default function ProfileScreen({navigation}) {
             ],
             { cancelable: false }
         )
-        // console.log("signout working")
         // navigation.navigate('Home')
     }
-
-    // const signOut = () => {
-    //     navigation.navigate('LogIn')
-    // }
 
     return (
         <View style={styles.container}>
