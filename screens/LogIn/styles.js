@@ -7,15 +7,15 @@ export default StyleSheet.create({
     },
     logo: {
         flex: 1,
-        height: 200,
-        width: 200,
+        height: 175,
+        width: 175,
         alignSelf: "center",
         margin: 30,
         borderRadius: 30
     },
     input: {
         height: 48,
-        borderRadius: 5,
+        borderRadius: 10,
         overflow: 'hidden',
         backgroundColor: 'white',
         marginTop: 10,
@@ -25,18 +25,18 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#788eec',
+        backgroundColor: 'orange',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,
         height: 48,
-        borderRadius: 5,
+        borderRadius: 10,
         alignItems: "center",
         justifyContent: 'center'
     },
     buttonTitle: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 23,
         fontWeight: "bold"
     },
     footerView: {

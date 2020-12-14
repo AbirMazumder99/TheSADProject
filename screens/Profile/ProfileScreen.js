@@ -5,16 +5,8 @@ import styles from './styles';
 export default function ProfileScreen({navigation}) {
 
     const signOut = () => {
-        Alert.alert(
-            "Sign Out",
-            "You have been signed out",
-            [
-                { text: "Cancel", onPress: () => console.log("Cancel Pressed"), style: "cancel"},
-                { text: "OK", onPress: () => console.log("OK Pressed") }
-            ],
-            { cancelable: false }
-        )
-        // navigation.navigate('Home')
+        // props.extraData = !props.extraData
+        navigation.navigate('LogIn')
     }
 
     return (

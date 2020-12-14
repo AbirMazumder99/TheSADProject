@@ -55,8 +55,9 @@ export default function SignUpScreen({navigation}) {
             <KeyboardAwareScrollView style={{ flex: 1, width: '100%' }} keyboardShouldPersistTaps="always">
                 <Image
                     style={styles.logo}
-                    source={require('../../assets/icon.png')}
+                    source={require('../../assets/sadlogo.jpg')}
                 />
+                <Text style={styles.welcomeText}>Welcome to S.A.D</Text>
                 <TextInput
                     style={styles.input}
                     placeholder='Full Name'

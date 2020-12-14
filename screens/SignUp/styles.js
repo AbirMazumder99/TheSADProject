@@ -5,19 +5,22 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
-    title: {
-
-    },
     logo: {
         flex: 1,
-        height: 120,
-        width: 90,
+        height: 175,
+        width: 175,
         alignSelf: "center",
-        margin: 30
+        margin: 20,
+        borderRadius: 30
+    },
+    welcomeText: {
+        fontSize: 32,
+        fontWeight: "1000",
+        textAlign: 'center'
     },
     input: {
         height: 48,
-        borderRadius: 5,
+        borderRadius: 10,
         overflow: 'hidden',
         backgroundColor: 'white',
         marginTop: 10,
@@ -27,18 +30,18 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#788eec',
+        backgroundColor: 'orange',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,
         height: 48,
-        borderRadius: 5,
+        borderRadius: 10,
         alignItems: "center",
         justifyContent: 'center'
     },
     buttonTitle: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 23,
         fontWeight: "bold"
     },
     footerView: {

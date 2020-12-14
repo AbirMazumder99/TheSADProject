@@ -12,20 +12,23 @@ import MessageScreen from './screens/Message/MessageScreen';
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
+let user = true;
+
 export default function App() {
-  let user = false;
   return (
     <NavigationContainer>
         {user ? (
           <Tab.Navigator>
             <Tab.Screen name= "Home" component={HomeScreen}/>
-            <Tab.Screen name = "Profile" component={ProfileScreen} options={{ title: 'Abir'}} />
+            <Tab.Screen name = "Profile" component={ProfileScreen} />
             <Tab.Screen name= "Message" component={MessageScreen}/>
           </Tab.Navigator>    
         ) : (
-          <Stack.Navigator>
-            <Stack.Screen name = "LogIn" component={LogInScreen} options={{ title: 'Hello'}} />
-            <Stack.Screen name = "SignUp" component={SignUpScreen} /> 
+          <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
+            <Stack.Screen name = "LogIn" component={LogInScreen} 
+            options={{ title: 'Sign In', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 32}}} />
+            <Stack.Screen name = "SignUp" component={SignUpScreen}
+            options={{ title: 'Sign Up', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 32}}} /> 
           </Stack.Navigator>
         )}
     </NavigationContainer> 
