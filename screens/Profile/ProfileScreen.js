@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { Image, Text, Button, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import styles from './styles';
+import auth from '@react-native-firebase/auth';
 
 export default function ProfileScreen({navigation}) {
 
     const signOut = () => {
+        auth().signOut().then(() => console.log("SIGNED OUT!")).catch((error) => alert(error));
+        
         // props.extraData = !props.extraData
-        navigation.navigate('LogIn')
+        // navigation.navigate('LogIn')
     }
-
+   
     return (
         <View style={styles.container}>
             <View style={{ marginTop: 64, alignItems: "center" }}>
