@@ -9,6 +9,7 @@ import ProfileScreen from './screens/Profile/ProfileScreen'
 import LogInScreen from './screens/LogIn/LogInScreen'
 import SignUpScreen from './screens/SignUp/SignUpScreen'
 import MessageScreen from './screens/Message/MessageScreen';
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
@@ -19,9 +20,9 @@ export default function App() {
     <NavigationContainer>
         {user ? (
           <Tab.Navigator>
-            <Tab.Screen name= "Home" component={HomeScreen}/>
-            <Tab.Screen name = "Profile" component={ProfileScreen} />
-            <Tab.Screen name= "Message" component={MessageScreen}/>
+            <Tab.Screen name= "Home" component={HomeScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-home" size={24} color={tintColor} />}} />
+            <Tab.Screen name = "Profile" component={ProfileScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-person" size={24} color={tintColor} />}}/>
+            <Tab.Screen name= "Message" component={MessageScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="chatbox-outline" size={24} color={tintColor} />}}/>
           </Tab.Navigator>    
         ) : (
           <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
