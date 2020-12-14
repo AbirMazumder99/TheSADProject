@@ -3,17 +3,13 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        flex: 1
-    },
-    avatarContainer: {
-        shadowColor: "#151734",
-        shadowRadius: 15,
-        shadowOpacity: 0.4
+        flex: 1,
+        // alignItems: 'center'
     },
     avatar: {
-        width: 136,
-        height: 136,
-        borderRadius: 68
+        width: 150,
+        height: 150,
+        borderRadius: 80
     },
     name: {
         marginTop: 24,
@@ -41,10 +37,10 @@ export default StyleSheet.create({
         marginTop: 4
     },
     button: {
-        backgroundColor: '#788eec',
+        backgroundColor: 'orange',
         marginLeft: 30,
         marginRight: 30,
-        marginTop: 20,
+        marginTop: 50,
         height: 48,
         borderRadius: 5,
         alignItems: "center",
