@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
 
+//Dummy
 let user = false;
 
 export default function App() {
