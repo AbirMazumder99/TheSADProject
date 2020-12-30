@@ -16,25 +16,28 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: "600"
     },
-    statsContainer: {
+    menuContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
         margin: 32
     },
-    stat: {
+    menu: {
         alignItems: "center",
         flex: 1
     },
-    statAmount: {
-        color: "#4F566D",
-        fontSize: 18,
-        fontWeight: "300"
-    },
-    statTitle: {
-        color: "#C3C5CD",
-        fontSize: 12,
+    menuTitle: {
+        color: "black",
+        fontSize: 20,
         fontWeight: "500",
         marginTop: 4
+    },
+    menuIcon: {
+        borderRadius: 20,
+        backgroundColor: 'silver',
+        width: 48,
+        height: 48,
+        justifyContent: 'center',
+        alignItems: "center"
     },
     button: {
         backgroundColor: 'orange',

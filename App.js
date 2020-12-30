@@ -16,7 +16,7 @@ const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator
 const Tab = createBottomTabNavigator();
 
 //Dummy
-let user = false;
+let user = true;
 
 export default function App() {
 
