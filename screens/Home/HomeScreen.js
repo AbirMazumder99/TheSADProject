@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 import moment from 'moment'
 import styles from './styles'
 
-//Demo Data
+//Dummy
 const POSTS = [
     {
         id: "1",

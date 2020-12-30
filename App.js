@@ -14,39 +14,12 @@ import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
-// let user = true;
+
+let user = false;
 
 export default function App() {
 
-  const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const usersRef = firebase.firestore().collection('users');
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        usersRef
-          .doc(user.uid)
-          .get()
-          .then((document) => {
-            const userData = document.data()
-            setLoading(false)
-            setUser(userData)
-          })
-          .catch((error) => {
-            setLoading(false)
-          });
-      } else {
-        setLoading(false)
-      }
-    });
-  }, []);
-
-  if (loading) {
-    return (
-      <></>
-    )
-  }
+ 
   return (
     <NavigationContainer>
         {user ? (
@@ -66,8 +39,3 @@ export default function App() {
     </NavigationContainer> 
   );
 }
-
-{/* <Tab.Navigator initialRouteName="Home">
-<Tab.Screen name="Home" component={HomeScreen} />
-<Tab.Screen name="Profile" component={ProfileScreen} />
-</Tab.Navigator> */}

@@ -2,15 +2,9 @@ import React, { useState } from 'react'
 import { Image, Text, Button, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import styles from './styles';
 import auth from '@react-native-firebase/auth';
+import firebase from '../../firebase/config'
 
 export default function ProfileScreen({navigation}) {
-
-    const signOut = () => {
-        auth().signOut().then(() => console.log("SIGNED OUT!")).catch((error) => alert(error));
-        
-        // props.extraData = !props.extraData
-        // navigation.navigate('LogIn')
-    }
    
     return (
         <View style={styles.container}>
@@ -20,7 +14,7 @@ export default function ProfileScreen({navigation}) {
                 {/* <Text style={styles.name}>{this.state.user.name}</Text> */}
                 <Text style={styles.name}>Abir Mazumder</Text>
             </View>
-            <TouchableOpacity style={styles.button} onPress={signOut}>
+            <TouchableOpacity style={styles.button} /* onPress={}*/>
                 <Text style={styles.buttonTitle}>Log Out</Text>
             </TouchableOpacity>
         </View>

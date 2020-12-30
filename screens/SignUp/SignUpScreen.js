@@ -13,42 +13,7 @@ export default function SignUpScreen({navigation}) {
 
     const onFooterLinkPress = () => {
         navigation.navigate('LogIn')
-    }
-    // const onRegisterPress = () => {
-    //     navigation.navigate('LogIn')
-    // }
-
-    const onRegisterPress = () => {
-        if (password !== confirmPassword) {
-            alert("Passwords don't match.")
-            return
-        }
-    
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then((response) => {
-                const uid = response.user.uid
-                const data = {
-                    id: uid,
-                    email,
-                    fullName,
-                };
-                const usersRef = firebase.firestore().collection('users')
-                usersRef
-                    .doc(uid)
-                    .set(data)
-                    .then(() => {
-                        navigation.navigate('Home', {user: data})
-                    })
-                    .catch((error) => {
-                        alert(error)
-                    });
-            })
-            .catch((error) => {
-                alert(error)
-        });
-    }
+    }    
 
     return (
         <View style={styles.container}>
@@ -98,7 +63,7 @@ export default function SignUpScreen({navigation}) {
                 />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => onRegisterPress()}>
+                    /*onPress={}*/>
                     <Text style={styles.buttonTitle}>Create account</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
