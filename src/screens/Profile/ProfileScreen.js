@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Image, Text, Button, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import styles from './styles';
 import { Ionicons } from "@expo/vector-icons";
-
+import useUser from  '../../api/User/user';
 
 export default function ProfileScreen({navigation}) {
-   
+    const User= useUser();
+
     const onSettingsPress = () => {
         navigation.navigate('Settings')
     }
@@ -34,7 +35,7 @@ export default function ProfileScreen({navigation}) {
                     <Text style={styles.menuTitle}>Edit</Text>
                 </View>
             </View>
-            <TouchableOpacity style={styles.button} /* onPress={}*/>
+            <TouchableOpacity style={styles.button} onPress={()=>User.logOut()}>
                 <Text style={styles.buttonTitle}>Log Out</Text>
             </TouchableOpacity>
         </View>

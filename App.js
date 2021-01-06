@@ -12,12 +12,11 @@ import MessageScreen from './src/screens/Message/MessageScreen';
 import EditScreen from "./src/screens/Edit/EditScreen";
 import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 import { Ionicons } from "@expo/vector-icons";
+import { firebase } from './src/firebase/config'
+
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Tab = createBottomTabNavigator();
-
-//Dummy
-let user = true;
 
 function Home() {
   return (
@@ -30,6 +29,39 @@ function Home() {
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const usersRef = firebase.firestore().collection('users');
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        usersRef
+          .doc(user.uid)
+          .get()
+          .then((document) => {
+            const userData = document.data()
+            setLoading(false)
+            setUser(userData)
+            // console.log("Pure UserData",userData)
+          })
+          .catch((error) => {
+            setLoading(false)
+          });
+      } else {
+        setUser(null)
+        setLoading(false)
+      }
+    });
+  }, []);
+
+  if (loading) {
+    return (
+      <></>
+    )
+  }
+
+
   return (
     <NavigationContainer>
         {user ? (

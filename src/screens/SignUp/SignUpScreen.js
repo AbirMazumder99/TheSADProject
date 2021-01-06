@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-
+import useUser from  '../../api/User/user'
 
 export default function SignUpScreen({navigation}) {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const User=useUser()
 
     const onFooterLinkPress = () => {
         navigation.navigate('LogIn')
@@ -62,7 +63,7 @@ export default function SignUpScreen({navigation}) {
                 />
                 <TouchableOpacity
                     style={styles.button}
-                    /*onPress={}*/>
+                    onPress={()=>User.register(email,password,confirmPassword,fullName)}>
                     <Text style={styles.buttonTitle}>Create account</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
