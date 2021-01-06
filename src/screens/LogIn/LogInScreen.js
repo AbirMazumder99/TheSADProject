@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
+import useUser from  '../../api/User/user'
 
 export default function LoginScreen({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    var User=useUser()
 
     const onFooterLinkPress = () => {
         navigation.navigate('SignUp')
@@ -34,7 +36,9 @@ export default function LoginScreen({navigation}) {
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
                 />
-                <TouchableOpacity style={styles.button} /* onPress = {}*/>
+                <TouchableOpacity 
+                    style={styles.button} 
+                    onPress = {()=>User.logIn(email,password)}>
                     <Text style={styles.buttonTitle}>Log in</Text>
                 </TouchableOpacity>
                 <View style={styles.footerView}>
