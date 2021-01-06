@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, Text, Button, TextInput, TouchableOpacity, View, Alert } from 'react-native'
+import { Image, Text, Button, TextInput, StatusBar, TouchableOpacity, View, Alert } from 'react-native'
 import styles from './styles';
 import { Ionicons } from "@expo/vector-icons";
 import useUser from  '../../api/User/user';
