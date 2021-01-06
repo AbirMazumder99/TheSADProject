@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-import { firebase } from "../../firebase/config";
 
 
 export default function SignUpScreen({navigation}) {
@@ -20,7 +19,7 @@ export default function SignUpScreen({navigation}) {
             <KeyboardAwareScrollView style={{ flex: 1, width: '100%' }} keyboardShouldPersistTaps="always">
                 <Image
                     style={styles.logo}
-                    source={require('../../assets/sadlogo.jpg')}
+                    source={require('../../../assets/sadlogo.jpg')}
                 />
                 <Text style={styles.welcomeText}>Welcome to S.A.D</Text>
                 <TextInput

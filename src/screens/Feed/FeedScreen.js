@@ -11,24 +11,24 @@ const POSTS = [
         name: "Joe McKay",
         text: "oquqweqwe",
         timestamp: 1569109273726,
-        avatar: require("../../assets/favicon.png"),
-        image: require("../../assets/favicon.png")
+        avatar: require("../../../assets/favicon.png"),
+        image: require("../../../assets/favicon.png")
     },
     {
         id: "2",
         name: "Karyn McKay",
         text: "vnbnvmnbm",
         timestamp: 1569109273726,
-        avatar: require("../../assets/favicon.png"),
-        image: require("../../assets/favicon.png")
+        avatar: require("../../../assets/favicon.png"),
+        image: require("../../../assets/favicon.png")
     },
     {
         id: "3",
         name: "Emer McKay",
         text: "gdfhdggfjhf",
         timestamp: 1569109273726,
-        avatar: require("../../assets/favicon.png"),
-        image: require("../../assets/favicon.png")
+        avatar: require("../../../assets/favicon.png"),
+        image: require("../../../assets/favicon.png")
     }
 ]
 
@@ -38,7 +38,7 @@ export default function HomeScreen() {
     const renderPost = ({ item }) => {
         return (
             <View style={styles.feedItem}>
-                <Image source={require("../../assets/abir.jpg")} style={styles.avatar} />
+                <Image source={require("../../../assets/abir.jpg")} style={styles.avatar} />
                 <View style={{ flex: 1 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                         <View>

@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState} from 'react';
-import { firebase } from "./firebase/config";
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './screens/Home/HomeScreen'
-import ProfileScreen from './screens/Profile/ProfileScreen'
-import LogInScreen from './screens/LogIn/LogInScreen'
-import SignUpScreen from './screens/SignUp/SignUpScreen'
-import MessageScreen from './screens/Message/MessageScreen';
+import FeedScreen from './src/screens/Feed/FeedScreen'
+import ProfileScreen from './src/screens/Profile/ProfileScreen'
+import LogInScreen from './src/screens/LogIn/LogInScreen'
+import SignUpScreen from './src/screens/SignUp/SignUpScreen'
+import MessageScreen from './src/screens/Message/MessageScreen';
+import EditScreen from "./src/screens/Edit/EditScreen";
+import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
@@ -18,17 +19,25 @@ const Tab = createBottomTabNavigator();
 //Dummy
 let user = true;
 
-export default function App() {
+function Home() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name= "Feed" component={FeedScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-home" size={24} color={tintColor} />}} />
+      <Tab.Screen name = "Profile" component={ProfileScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-person" size={24} color={tintColor} />}}/>
+      <Tab.Screen name= "Message" component={MessageScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="chatbox-outline" size={24} color={tintColor} />}}/>
+    </Tab.Navigator>
+  );
+}
 
- 
+export default function App() {
   return (
     <NavigationContainer>
         {user ? (
-          <Tab.Navigator>
-            <Tab.Screen name= "Home" component={HomeScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-home" size={24} color={tintColor} />}} />
-            <Tab.Screen name = "Profile" component={ProfileScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-person" size={24} color={tintColor} />}}/>
-            <Tab.Screen name= "Message" component={MessageScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="chatbox-outline" size={24} color={tintColor} />}}/>
-          </Tab.Navigator>    
+          <Stack.Navigator>
+            <Stack.Screen name = "Home" component={Home} />
+            <Stack.Screen name = "Edit" component={EditScreen} />
+            <Stack.Screen name = "Settings" component={SettingsScreen} />
+          </Stack.Navigator>
         ) : (
           <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
             <Stack.Screen name = "LogIn" component={LogInScreen} 

@@ -15,7 +15,7 @@ export default StyleSheet.create({
     },
     welcomeText: {
         fontSize: 32,
-        fontWeight: "1000",
+        fontWeight: "normal",
         textAlign: 'center'
     },
     input: {
