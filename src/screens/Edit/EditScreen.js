@@ -4,10 +4,10 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styles from './styles';
 
 
-export default function MessageScreen() {
+export default function EditScreen() {
     return (
         <View style={styles.container}>
-            <Text>Message Screen</Text>
+            <Text>Edit Screen</Text>
         </View>
     )
 }

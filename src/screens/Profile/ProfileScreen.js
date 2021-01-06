@@ -25,13 +25,13 @@ export default function ProfileScreen({navigation}) {
                     <TouchableOpacity style={styles.menuIcon} onPress={onSettingsPress}>
                         <Ionicons name="settings" size={30} />
                     </TouchableOpacity>
-                    <Text style={styles.menuTitle}>Edit</Text>
+                    <Text style={styles.menuTitle}>Settings</Text>
                 </View>
                 <View style={styles.menu}>
                     <TouchableOpacity style={styles.menuIcon} onPress={onEditPress}>
                         <Ionicons name="pencil" size={30} />
                     </TouchableOpacity>
-                    <Text style={styles.menuTitle}>Settings</Text>
+                    <Text style={styles.menuTitle}>Edit</Text>
                 </View>
             </View>
             <TouchableOpacity style={styles.button} /* onPress={}*/>
