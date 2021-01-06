@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Image, Text, Button, TextInput, StatusBar, TouchableOpacity, View, Alert } from 'react-native'
+import React from 'react'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles';
 import { Ionicons } from "@expo/vector-icons";
 

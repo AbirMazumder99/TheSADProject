@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View, FlatList, StatusBar, SafeAreaView } from 'react-native';
+import { Image, Text, View, FlatList, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import moment from 'moment'
 import styles from './styles'
