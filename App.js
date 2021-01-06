@@ -19,13 +19,13 @@ const Tab = createBottomTabNavigator();
 //Dummy
 let user = true;
 
-function Home() {
+function ProfileStack() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name= "Feed" component={FeedScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-home" size={24} color={tintColor} />}} />
-      <Tab.Screen name = "Profile" component={ProfileScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-person" size={24} color={tintColor} />}}/>
-      <Tab.Screen name= "Message" component={MessageScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="chatbox-outline" size={24} color={tintColor} />}}/>
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name = "Profile" component={ProfileScreen} />
+      <Stack.Screen name = "Edit" component={EditScreen} />
+      <Stack.Screen name = "Settings" component={SettingsScreen} />
+    </Stack.Navigator>
   );
 }
 
@@ -33,11 +33,11 @@ export default function App() {
   return (
     <NavigationContainer>
         {user ? (
-          <Stack.Navigator>
-            <Stack.Screen name = "Home" component={Home} />
-            <Stack.Screen name = "Edit" component={EditScreen} />
-            <Stack.Screen name = "Settings" component={SettingsScreen} />
-          </Stack.Navigator>
+          <Tab.Navigator>
+            <Tab.Screen name = "Feed" component={FeedScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-home" size={24} color={tintColor} />}} />
+            <Tab.Screen name = "ProfileStack" component={ProfileStack} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="ios-person" size={24} color={tintColor} />}}/>
+            <Tab.Screen name = "Message" component={MessageScreen} options = {{tabBarIcon: ({ tintColor }) => <Ionicons name="chatbox-outline" size={24} color={tintColor} />}}/>
+          </Tab.Navigator>
         ) : (
           <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
             <Stack.Screen name = "LogIn" component={LogInScreen} 

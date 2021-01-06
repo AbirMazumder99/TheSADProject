@@ -34,7 +34,7 @@ const POSTS = [
 
 
 
-export default function HomeScreen() {
+export default function FeedScreen() {
     const renderPost = ({ item }) => {
         return (
             <View style={styles.feedItem}>
