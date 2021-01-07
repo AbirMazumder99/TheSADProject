@@ -1,39 +1,43 @@
 import { StyleSheet } from 'react-native';
 import { fontFamily } from "./EditScreen";
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    heroContainer: {
-        marginTop: 40,
-        marginBottom: 50,
-        paddingVertical: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        borderTopWidth: StyleSheet.hairlineWidth,
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderColor: '#ccc',
-        flexDirection: 'row',
-    },
-    heroImage: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        borderWidth: 3,
-        borderColor: 'black',
-        marginHorizontal: 20,
-    },
-    heroTitle: {
-        fontFamily,
-        color: 'black',
-        fontSize: 24,
-    },
-    heroSubtitle: {
-        fontFamily,
-        color: '#999',
-        fontSize: 14,
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  defaultText: {
+    color: '#999',
+    marginRight: 6,
+    fontSize: 18 
+  },
+  versionText: {
+    alignSelf: 'center',
+    fontSize: 18,
+    marginBottom: 40,
+    fontFamily,
+  },
+  logo: {
+    flex: 1,
+    height: 75,
+    width: 75,
+    alignSelf: "center",
+    margin: 20,
+    borderRadius: 30
+  },
+  button: {
+    backgroundColor: 'orange',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 50,
+    height: 48,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: 'center'
+  },
+  buttonTitle: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: "bold"
+  },
 })

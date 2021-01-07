@@ -190,12 +190,13 @@ export default function SettingScreen() {
     return (
         <View style={styles.container}>
           <StatusBar barStyle="light-content" backgroundColor="#8c231a" />
-
+        
           <SettingsScreen data={settingsData} globalTextStyle={{ fontFamily }} 
-          scrollViewProps={{ refreshControl: (
+          scrollViewProps={{ refreshControl: ( //adds pull to refresh functionality
               <RefreshControl refreshing={state.refreshing} 
-              onRefresh={() => {setState({ refreshing: true }) 
-              setTimeout(() => setState({ refreshing: false }), 3000)
+              onRefresh={() => {
+                setState({ refreshing: true })
+                setTimeout(() => setState({ refreshing: false }), 3000)
               }}
               />
           ),}} />
