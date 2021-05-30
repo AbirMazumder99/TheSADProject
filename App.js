@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState} from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,7 +9,7 @@ import LogInScreen from './src/screens/LogIn/LogInScreen'
 import SignUpScreen from './src/screens/SignUp/SignUpScreen'
 import MessageScreen from './src/screens/Message/MessageScreen';
 import EditScreen from "./src/screens/Edit/EditScreen";
-import SettingsScreen from "./src/screens/Settings/SettingsScreen";
+import SettingScreen from "./src/screens/Settings/SettingScreen";
 import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator(); //Always has 2 props: Screen and Navigator. Navigator -> Screen
@@ -33,17 +32,17 @@ export default function App() {
   return (
     <NavigationContainer>
         {user ? (
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
             <Stack.Screen name = "Home" component={Home} />
             <Stack.Screen name = "Edit" component={EditScreen} />
-            <Stack.Screen name = "Settings" component={SettingsScreen} />
+            <Stack.Screen name = "Settings" component={SettingScreen} />
           </Stack.Navigator>
         ) : (
           <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'hsla(165, 50%, 42%, 1.0)'}}}>
             <Stack.Screen name = "LogIn" component={LogInScreen} 
-            options={{ title: 'Sign In', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 32}}} />
+            options={{ title: 'Sign In', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 25}}} />
             <Stack.Screen name = "SignUp" component={SignUpScreen}
-            options={{ title: 'Sign Up', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 32}}} /> 
+            options={{ title: 'Sign Up', headerTitleStyle : { alignSelf : 'center', fontWeight: 'bold', fontSize: 25}}} /> 
           </Stack.Navigator>
         )}
     </NavigationContainer> 

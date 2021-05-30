@@ -64,9 +64,6 @@ export default function HomeScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.headerTitle}>Feed</Text>
-            </View>
             <FlatList
                 style={styles.feed}
                 data={POSTS}

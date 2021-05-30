@@ -37,6 +37,9 @@ export default function ProfileScreen({navigation}) {
             <TouchableOpacity style={styles.button} /* onPress={}*/>
                 <Text style={styles.buttonTitle}>Log Out</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} /* onPress={}*/>
+                <Text style={styles.buttonTitle}>Delete Account</Text>
+            </TouchableOpacity>
         </View>
     )
 }
