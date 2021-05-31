@@ -1,28 +1,15 @@
 import React, { useState } from 'react'
 import {Text, RefreshControl, View, ScrollView} from 'react-native'
+import { TextInput } from 'react-native-gesture-handler';
 import { SettingsScreen } from "react-native-settings-screen"
 import styles from './styles';
 
-export default function SettingScreen() {
+export default function EditScreen() {
     const [refreshing, setRefreshing] = useState(false)
+    const [bio, setBio] = useState('')
 
     const settingsData = [
-        {
-            type: 'SECTION',
-            header: 'Account Settings'.toUpperCase(),
-            footer:
-                'A verified Phone Number and Email help secure your account',
-            rows: [
-                {
-                    title: 'Phone Number',
-                    showDisclosureIndicator: true,
-                },
-                {
-                    title: 'Email Address',
-                    showDisclosureIndicator: true,
-                },
-            ],
-        },
+       
         {
             type: 'SECTION',
             header: 'Discovery'.toUpperCase(),
@@ -48,7 +35,18 @@ export default function SettingScreen() {
         },
         {
             type: 'CUSTOM_VIEW',
-            render: () => (<Text style={styles.versionTitle}>v1.0.0</Text>),
+            title: 'akgfg',
+            render: () => (
+            <TextInput
+                style={styles.input}
+                placeholder='Write Something Nice!!'
+                placeholderTextColor="#aaaaaa"
+                onChangeText={(text) => setBio(text)}
+                value={bio}
+                underlineColorAndroid="transparent"
+                autoCapitalize="none"
+            />
+            ),
         },
     ]
 

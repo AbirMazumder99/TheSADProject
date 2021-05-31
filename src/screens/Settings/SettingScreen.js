@@ -1,76 +1,101 @@
-import React, { useState } from 'react'
-import {Text, RefreshControl, View, ScrollView} from 'react-native'
-import { SettingsScreen } from "react-native-settings-screen"
-import styles from './styles';
+import React, { useState, useEffect } from "react";
+import {
+  ActivityIndicator,
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import { Cell, Section, TableView } from "react-native-tableview-simple";
+import * as Location from "expo-location";
 
-export default function SettingScreen() {
-    const [refreshing, setRefreshing] = useState(false)
+import styles from "./styles";
 
-    const settingsData = [
-        {
-            type: 'SECTION',
-            header: 'Account Settings'.toUpperCase(),
-            footer:
-                'A verified Phone Number and Email help secure your account',
-            rows: [
-                {
-                    title: 'Phone Number',
-                    showDisclosureIndicator: true,
-                },
-                {
-                    title: 'Email Address',
-                    showDisclosureIndicator: true,
-                },
-            ],
-        },
-        {
-            type: 'SECTION',
-            header: 'Discovery'.toUpperCase(),
-            rows: [
+const Loc = () => {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
 
-                {
-                    title: 'Location',
-                    showDisclosureIndicator: true,
-                },
-                {
-                    title: 'Show Me',
-                    showDisclosureIndicator: true,
-                },
-                {
-                    title: 'Max Distance',
-                    showDisclosureIndicator: true,
-                },
-                {
-                    title: 'Age Range',
-                    showDisclosureIndicator: true,
-                },
-            ],
-        },
-        {
-            type: 'CUSTOM_VIEW',
-            render: () => (<Text style={styles.versionTitle}>v1.0.0</Text>),
-        },
-    ]
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
 
-    return (
-        <ScrollView contentContainerStyle={{marginTop: 20}}>
-            <View style={styles.container}>
-                <SettingsScreen 
-                    data={settingsData} 
-                    scrollViewProps={{
-                        refreshControl: (
-                            // This is for Scroll Refreshing, Timeout after 3s
-                            <RefreshControl 
-                                refreshing={refreshing} 
-                                onRefresh={() => {
-                                    setRefreshing(true)
-                                    setTimeout(() => setRefreshing(false), 3000)
-                                }}
-                            />
-                        ),
-                    }}
-                />    
-            </View>
-        </ScrollView>        
-    )
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = "Waiting..";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+  return (
+    <View style={styles.container}>
+      <Text>{text}</Text>
+    </View>
+  );
+};
+
+export default function SettingScreen({ navigation }) {
+  const onEmailAddressPress = () => {
+    navigation.navigate("Email");
+  };
+  const onPhoneNumberPress = () => {
+    navigation.navigate("Number");
+  };
+  return (
+    <ScrollView contentContainerStyle={styles.stage}>
+      <TableView appearance="light">
+        <Section header="ACCOUNT SETTINGS">
+          <Cell
+            title="Email Address"
+            accessory="DisclosureIndicator"
+            onPress={onEmailAddressPress}
+          />
+          <Cell
+            title="Phone Number"
+            accessory="DisclosureIndicator"
+            onPress={onPhoneNumberPress}
+          />
+        </Section>
+        <Section header="DISCOVERY">
+          <Cell title="Location" onPress={() => <Text>RIPPP</Text>} />
+          <Loc></Loc>
+
+          <Cell title="Show Me" />
+          {/* <CellSlider
+            title="Maximum Distance"
+            // onPress={() => console.log("Enter Maximum Distance")}
+          /> */}
+          {/* <CellSlider
+            title="Age Range"
+            onPress={() => console.log("Enter Age Range")}
+          /> */}
+        </Section>
+      </TableView>
+      <TableView>
+        <Section footer="All rights reserved.">
+          <Cell
+            title="Help / FAQ"
+            titleTextColor="#007AFF"
+            onPress={() => console.log("open Help/FAQ")}
+          />
+          <Cell
+            title="Contact Us"
+            titleTextColor="#007AFF"
+            onPress={() => console.log("open Contact Us")}
+          />
+        </Section>
+      </TableView>
+    </ScrollView>
+  );
 }
