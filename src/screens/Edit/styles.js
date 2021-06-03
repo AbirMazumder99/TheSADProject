@@ -1,26 +1,29 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    versionTitle: {
-        alignSelf: 'center',
-        fontSize: 18,
-        color: '#999',
-        marginBottom: 40,
-    },
-    input: {
-        height: 48,
-        borderRadius: 10,
-        overflow: 'hidden',
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 30,
-        marginRight: 30,
-        paddingLeft: 16
-    },
-})
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  header: {
+    fontSize: 15,
+    color: "black",
+    fontWeight: "bold",
+  },
+  picker: {
+    backgroundColor: "#EFEFF4",
+    maxHeight: "70%",
+    borderRadius: 10,
+  },
+  stage: {
+    backgroundColor: "#EFEFF4",
+    padding: 15,
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+});

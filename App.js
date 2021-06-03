@@ -9,9 +9,7 @@ import LogInScreen from "./src/screens/LogIn/LogInScreen";
 import SignUpScreen from "./src/screens/SignUp/SignUpScreen";
 import MessageScreen from "./src/screens/Message/MessageScreen";
 import EditScreen from "./src/screens/Edit/EditScreen";
-import SettingScreen from "./src/screens/Settings/SettingScreen";
-import EmailScreen from "./src/screens/Email/EmailScreen";
-import NumberScreen from "./src/screens/Number/NumberScreen";
+import SettingsScreen from "./src/screens/Settings/SettingScreen";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -66,9 +64,7 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Edit" component={EditScreen} />
-          <Stack.Screen name="Settings" component={SettingScreen} />
-          <Stack.Screen name="Email" component={EmailScreen} />
-          <Stack.Screen name="Number" component={NumberScreen} />
+          <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator

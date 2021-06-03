@@ -6,21 +6,31 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  versionTitle: {
-    alignSelf: "center",
-    fontSize: 18,
-    color: "#999",
-    marginBottom: 40,
+  header: {
+    fontSize: 15,
+    color: "black",
+    fontWeight: "bold",
+  },
+  picker: {
+    backgroundColor: "#EFEFF4",
+    maxHeight: "70%",
+    borderRadius: 10,
   },
   stage: {
     backgroundColor: "#EFEFF4",
-    paddingTop: 20,
-    paddingBottom: 20,
+    padding: 15,
   },
   input: {
     height: 40,
     margin: 12,
     borderWidth: 1,
     borderRadius: 10,
+  },
+  slider: {
+    alignSelf: "center",
+  },
+  sliderText: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
 });
