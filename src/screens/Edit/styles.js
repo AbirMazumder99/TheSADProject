@@ -26,4 +26,11 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
   },
+  slider: {
+    alignSelf: "center",
+  },
+  sliderText: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
 });

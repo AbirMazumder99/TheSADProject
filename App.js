@@ -9,7 +9,7 @@ import LogInScreen from "./src/screens/LogIn/LogInScreen";
 import SignUpScreen from "./src/screens/SignUp/SignUpScreen";
 import MessageScreen from "./src/screens/Message/MessageScreen";
 import EditScreen from "./src/screens/Edit/EditScreen";
-import SettingsScreen from "./src/screens/Settings/SettingScreen";
+import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 
 import { Ionicons } from "@expo/vector-icons";
 

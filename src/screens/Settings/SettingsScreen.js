@@ -1,47 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, Text, TextInput, View } from "react-native";
-// import * as Location from "expo-location";
 import { Picker } from "@react-native-picker/picker";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
 
-
 import styles from "./styles";
-
-// const Loc = () => {
-//   const [location, setLocation] = useState(null);
-//   const [errorMsg, setErrorMsg] = useState(null);
-
-//   useEffect(() => {
-//     (async () => {
-//       let { status } = await Location.requestForegroundPermissionsAsync();
-//       if (status !== "granted") {
-//         setErrorMsg("Permission to access location was denied");
-//         return;
-//       }
-
-//       let location = await Location.getCurrentPositionAsync({});
-//       setLocation(location);
-//     })();
-//   }, []);
-
-//   let text = "Waiting..";
-//   if (errorMsg) {
-//     text = errorMsg;
-//   } else if (location) {
-//     text = JSON.stringify(location);
-//   }
-//   return (
-//     <View style={styles.container}>
-//       <Text>{text}</Text>
-//     </View>
-//   );
-// };
 
 export default function SettingsScreen() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [selectedPref, setSelectedPref] = useState();
   const [selectedDist, setSelectedDist] = useState();
+  const [selectedLoc, setSelectedLoc] = useState();
 
   // Age Range
   const [multiSliderValue, setMultiSliderValue] = useState([18, 100]);
@@ -93,10 +62,8 @@ export default function SettingsScreen() {
       </Picker>
       <Text style={styles.header}>Age Range</Text>
       <View style={styles.slider}>
-        {/* <Text style={styles.sliderText}></Text> */}
         <MultiSlider
           values={[multiSliderValue[0], multiSliderValue[1]]}
-          // sliderLength={250}
           onValuesChange={multiSliderValuesChange}
           min={18}
           max={100}
@@ -109,7 +76,16 @@ export default function SettingsScreen() {
         </View>
       </View>
       <Text style={styles.header}>Location</Text>
-
+      <Picker
+        selectedValue={selectedLoc}
+        onValueChange={(itemValue, itemIndex) => setSelectedLoc(itemValue)}
+        itemStyle={styles.picker}
+      >
+        <Picker.Item label="Asia" value="ASI" />
+        <Picker.Item label="Australia" value="AUS" />
+        <Picker.Item label="USA" value="USA" />
+        <Picker.Item label="Canada" value="CAN" />
+      </Picker>
     </ScrollView>
   );
 }
