@@ -26,11 +26,15 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
   },
-  slider: {
-    alignSelf: "center",
-  },
-  sliderText: {
+  imageItem: {
+    margin: "5% 5% 5% 5%",
+    alignItems: "center",
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
+  },
+  image: {
+    width: 150,
+    height: 150,
+    borderRadius: 80,
   },
 });

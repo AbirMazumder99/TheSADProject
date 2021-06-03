@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity } from "react-native";
+import {
+  Image,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  FlatList,
+  SafeAreaView,
+} from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import MultiSlider from "@ptomasroos/react-native-multi-slider";
 
 import styles from "./styles";
 
@@ -12,7 +20,29 @@ export default function SettingsScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.stage}>
-      {/* Image Carousel Here */}
+      <View style={styles.imageItem}>
+        {/* <Image style={styles.avatar} source={this.state.user.avatar ? { uri: this.state.user.avatar } : require("../assets/authHeader.jpg")} /> */}
+        <Image
+          style={styles.image}
+          source={require("../../../assets/abir.jpg")}
+        />
+        <Image
+          style={styles.image}
+          source={require("../../../assets/abir.jpg")}
+        />
+      </View>
+      <View style={styles.imageItem}>
+        {/* <Image style={styles.avatar} source={this.state.user.avatar ? { uri: this.state.user.avatar } : require("../assets/authHeader.jpg")} /> */}
+        <Image
+          style={styles.image}
+          source={require("../../../assets/abir.jpg")}
+        />
+        <Image
+          style={styles.image}
+          source={require("../../../assets/abir.jpg")}
+        />
+      </View>
+
       <Text style={styles.header}>My Bio</Text>
       <TextInput
         style={styles.input}
