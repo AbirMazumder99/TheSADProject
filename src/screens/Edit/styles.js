@@ -10,6 +10,7 @@ export default StyleSheet.create({
     fontSize: 15,
     color: "black",
     fontWeight: "bold",
+    padding: 10,
   },
   picker: {
     backgroundColor: "#EFEFF4",

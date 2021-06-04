@@ -28,32 +28,34 @@ export default function SettingsScreen() {
         />
         <Image
           style={styles.image}
-          source={require("../../../assets/abir.jpg")}
+          source={require("../../../assets/abir2.jpg")}
         />
       </View>
       <View style={styles.imageItem}>
         {/* <Image style={styles.avatar} source={this.state.user.avatar ? { uri: this.state.user.avatar } : require("../assets/authHeader.jpg")} /> */}
         <Image
           style={styles.image}
-          source={require("../../../assets/abir.jpg")}
+          source={require("../../../assets/ali.jpg")}
         />
         <Image
           style={styles.image}
-          source={require("../../../assets/abir.jpg")}
+          source={require("../../../assets/ali2.jpg")}
         />
       </View>
 
       <Text style={styles.header}>My Bio</Text>
       <TextInput
         style={styles.input}
-        placeholder="Write something cool.."
+        placeholder="Write something cool!"
         placeholderTextColor="#aaaaaa"
         onChangeText={(text) => setBio(text)}
         value={bio}
         underlineColorAndroid="transparent"
       />
       <Text style={styles.header}>Living In</Text>
-      <TouchableOpacity>
+      <TouchableOpacity
+        style={{ padding: 20, backgroundColor: "orange", borderRadius: 10 }}
+      >
         <Text>Get Current Location</Text>
       </TouchableOpacity>
       <Text style={styles.header}>Gender</Text>

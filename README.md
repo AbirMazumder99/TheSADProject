@@ -1,15 +1,37 @@
-# TheSADProject
+# The S.A.D Project
 
-Environment Setup
-1. Install NodeJs
-2. Install expo client [npm install -g expo-cli]
-3. Create a new project [expo init SAD]
-4. Start your server [npm start]
+![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
+[![npm](https://img.shields.io/npm/v/react-native-snap-carousel.svg?style=flat-square)
 
-# App.js
+## Table of contents
 
-1. Install React Navigation [npm install @react-navigation/native @react-navigation/stack]
-2. Install peer dependencies [expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-keyboard-aware-scroll-view moment]
+1. [Showcase](#showcase)
+1. [Usage](#usage)
+1. [Environment Setup](#Environment-setup)
+1. [Note](#Note)
+1. [Credits](#Credits)
 
-# Note
-Always run [expo install <package-name>] when install packages/dependencies. If dependencies ever become incompatible with expo, run [expo update]
+## Showcase
+
+![react-native-snap-carousel default layout](/assets/Showcase/1.jpg)
+![react-native-snap-carousel tinder layout](/assets/Showcase/2.jpg))
+![react-native-snap-carousel stack layout](/assets/Showcase/3.jpg))
+![react-native-snap-carousel stack layout](/assets/Showcase/4.jpg))
+![react-native-snap-carousel stack layout](/assets/Showcase/5.jpg))
+![react-native-snap-carousel stack layout](/assets/Showcase/6.jpg))
+
+## Environment-setup
+
+```bash
+$ npm install -g expo-cli
+$ expo init SAD
+$ npm start
+```
+
+## Note
+
+Always run [expo install <package-name>] when installing packages/dependencies. If dependencies ever become incompatible with expo, run [expo update]
+
+## Credits
+
+Created by [Abir Mazumder](https://www.linkedin.com/in/abir99/) ([AbirMazumder99](https://github.com/AbirMazumder99)) and [Ali Ahmed Khan](https://www.linkedin.com/in/ali-khan-b546a0192/) ([Ahmed4812](https://github.com/Ahmed4812)).
