@@ -14,13 +14,12 @@
 
 ## Showcase
 
-<img src="/assets/Showcase/1.jpg" width="100" height="100">
-<!-- ![SignUp](/assets/Showcase/1.jpg) -->
-![Profile](/assets/Showcase/2.jpg)
-![Edit](/assets/Showcase/3.jpg)
-![Settings](/assets/Showcase/4.jpg)
-![Feed](/assets/Showcase/5.jpg)
-![SignIn](/assets/Showcase/6.jpg)
+<img src="/assets/Showcase/1.jpg" width="400" height="300">
+<img src="/assets/Showcase/2.jpg" width="400" height="300">
+<img src="/assets/Showcase/3.jpg" width="400" height="300">
+<img src="/assets/Showcase/4.jpg" width="400" height="300">
+<img src="/assets/Showcase/5.jpg" width="400" height="300">
+<img src="/assets/Showcase/6.jpg" width="400" height="300">
 
 ## Environment-setup
 
