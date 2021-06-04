@@ -1,24 +1,13 @@
 import React from "react";
-import {
-  Image,
-  Text,
-  View,
-  FlatList,
-  SafeAreaView,
-  Dimensions,
-} from "react-native";
+import { Image, Text, View, SafeAreaView, Dimensions } from "react-native";
 import styles from "./styles";
 import Carousel from "react-native-snap-carousel";
-import SliderEntry from "react-native-snap-carousel/src/carousel/";
+// import SliderEntry from "react-native-snap-carousel/src/carousel/";
 
-const { width: viewportWidth, height: viewportHeight } =
-  Dimensions.get("window");
+const SLIDER_WIDTH = Dimensions.get("window").width;
+const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.95);
+const ITEM_HEIGHT = Math.round(Dimensions.get("window").height * 0.55);
 
-const slideWidth = wp(75);
-const itemHorizontalMargin = wp(2);
-
-const sliderWidth = viewportWidth;
-const itemWidth = slideWidth + itemHorizontalMargin * 2;
 //Dummy
 const ENTRIES = [
   {
@@ -55,37 +44,30 @@ const ENTRIES = [
 
 export default function FeedScreen() {
   const _renderItem = ({ item, index }) => {
-    return <SliderEntry data={item} even={false} />;
+    return (
+      <View style={styles.slide}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.subtitle}>{item.subtitle}</Text>
+        <Image
+          source={{ uri: item.illustration }}
+          style={{ width: ITEM_WIDTH, height: ITEM_HEIGHT }}
+        ></Image>
+      </View>
+    );
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <StatusBar
-          translucent={true}
-          backgroundColor={"rgba(0, 0, 0, 0.3)"}
-          barStyle={"light-content"}
+        <Carousel
+          data={ENTRIES}
+          renderItem={_renderItem}
+          sliderWidth={SLIDER_WIDTH}
+          itemWidth={ITEM_WIDTH}
+          itemHeight={ITEM_HEIGHT}
+          layout="tinder"
+          loop={true}
         />
-        <ScrollView
-          style={styles.scrollview}
-          scrollEventThrottle={200}
-          directionalLockEnabled={true}
-        >
-          <View style={styles.exampleContainer}>
-            <Text style={styles.title}>Michelle</Text>
-            <Text style={styles.subtitle}>Student at USC</Text>
-            <Carousel
-              data={ENTRIES}
-              renderItem={_renderItem}
-              sliderWidth={sliderWidth}
-              itemWidth={itemWidth}
-              containerCustomStyle={styles.slider}
-              contentContainerCustomStyle={styles.sliderContentContainer}
-              layout="tinder"
-              loop={true}
-            />
-          </View>
-        </ScrollView>
       </View>
     </SafeAreaView>
   );
