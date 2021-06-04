@@ -62,8 +62,8 @@ export function AuthProvider({ children }) {
   };
 
   ////////////////////////////////////////
-  //  AUTHENTICATION      
-  ///////////////////////////////////////              
+  //  AUTHENTICATION
+  ///////////////////////////////////////
   async function signup(email, password, confirmPassword, fullName) {
     if (password !== confirmPassword) {
       alert("Passwords don't match.");
@@ -99,6 +99,10 @@ export function AuthProvider({ children }) {
 
   async function logout() {
     return firebase.auth().signOut();
+  }
+
+  async function remove() {
+    return firebase.auth().currentUser.delete();
   }
 
   async function resetPassword(email) {
@@ -140,6 +144,7 @@ export function AuthProvider({ children }) {
     login,
     signup,
     logout,
+    remove,
     resetPassword,
     updateEmail,
     updatePassword,

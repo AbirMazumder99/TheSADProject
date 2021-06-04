@@ -7,6 +7,7 @@ import { useAuth } from "../../api/user/AuthContext";
 
 export default function ProfileScreen({ navigation }) {
   const { logout, currentUser, userData } = useAuth();
+  const { remove } = useAuth();
 
   const onSettingsPress = () => {
     navigation.navigate(screens.SETTINGS);
@@ -39,10 +40,10 @@ export default function ProfileScreen({ navigation }) {
           <Text style={styles.menuTitle}>Edit</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => logout()}>
+      <TouchableOpacity style={styles.button} /** onPress={() => logout()}**/>
         <Text style={styles.buttonTitle}>Log Out</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} /* onPress={}*/>
+      <TouchableOpacity style={styles.button} /**onPress={() => remove()}**/>
         <Text style={styles.buttonTitle}>Delete Account</Text>
       </TouchableOpacity>
     </View>
