@@ -1,7 +1,8 @@
 # The S.A.D Project
 
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
-![npm](https://img.shields.io/npm/v/react-native-snap-carousel.svg?style=flat-square)
+
+<!-- ![npm](https://img.shields.io/npm/v/react-native-snap-carousel.svg?style=flat-square) -->
 
 ## Table of contents
 
@@ -13,7 +14,7 @@
 
 ## Showcase
 
-![SignUp](/assets/Showcase/1.jpg)
+![SignUp](/assets/Showcase/1.jpg =250x250)
 ![Profile](/assets/Showcase/2.jpg)
 ![Edit](/assets/Showcase/3.jpg)
 ![Settings](/assets/Showcase/4.jpg)
