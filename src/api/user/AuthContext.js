@@ -61,6 +61,9 @@ export function AuthProvider({ children }) {
     });
   };
 
+  ////////////////////////////////////////
+  //  AUTHENTICATION      
+  ///////////////////////////////////////              
   async function signup(email, password, confirmPassword, fullName) {
     if (password !== confirmPassword) {
       alert("Passwords don't match.");

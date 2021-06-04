@@ -21,14 +21,11 @@ import * as screens from "./src/static/constants/navConst";
 
 //Firebase API
 import { firebase } from "./src/firebase/config";
-import { AuthProvider } from "./src/api/user/user";
+import { AuthProvider } from "./src/api/user/AuthContext";
 
 //Always has 2 props: Screen and Navigator. Navigator -> Screen
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-//Dummy
-// let user = false;
 
 function Home() {
   return (
