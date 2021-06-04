@@ -1,0 +1,13 @@
+export const MIN_AGE = 18;
+export const MAX_AGE = 100;
+export const EVERONE = "E";
+export const MEN = "M";
+export const WOMEN = "W";
+export const DIST10 = 10;
+export const DIST25 = 25;
+export const DIST50 = 50;
+export const DIST100 = 100;
+export const ASIA = "ASI";
+export const AUSTRALIA = "AUS";
+export const USA = "USA";
+export const CANADA = "CAN";

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ScrollView, Text, TextInput, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
+import * as setting from "../../static/constants/settingsConst";
 
 import styles from "./styles";
+import { set } from "react-native-reanimated";
 
 export default function SettingsScreen() {
   const [email, setEmail] = useState("");
@@ -13,7 +15,10 @@ export default function SettingsScreen() {
   const [selectedLoc, setSelectedLoc] = useState();
 
   // Age Range
-  const [multiSliderValue, setMultiSliderValue] = useState([18, 100]);
+  const [multiSliderValue, setMultiSliderValue] = useState([
+    setting.MIN_AGE,
+    setting.MAX_AGE,
+  ]);
   const multiSliderValuesChange = (values) => setMultiSliderValue(values);
 
   return (
@@ -45,9 +50,9 @@ export default function SettingsScreen() {
         onValueChange={(itemValue, itemIndex) => setSelectedPref(itemValue)}
         itemStyle={styles.picker}
       >
-        <Picker.Item label="Everyone" value="E" />
-        <Picker.Item label="Men" value="M" />
-        <Picker.Item label="Women" value="W" />
+        <Picker.Item label="Everyone" value={setting.EVERONE} />
+        <Picker.Item label="Men" value={setting.MEN} />
+        <Picker.Item label="Women" value={setting.WOMEN} />
       </Picker>
       <Text style={styles.header}>Max Distance</Text>
       <Picker
@@ -55,18 +60,18 @@ export default function SettingsScreen() {
         onValueChange={(itemValue, itemIndex) => setSelectedDist(itemValue)}
         itemStyle={styles.picker}
       >
-        <Picker.Item label="10 mi." value="10" />
-        <Picker.Item label="25 mi." value="25" />
-        <Picker.Item label="50 mi." value="50" />
-        <Picker.Item label="100 mi." value="100" />
+        <Picker.Item label="10 mi." value={setting.DIST10} />
+        <Picker.Item label="25 mi." value={setting.DIST25} />
+        <Picker.Item label="50 mi." value={setting.DIST50} />
+        <Picker.Item label="100 mi." value={setting.DIST100} />
       </Picker>
       <Text style={styles.header}>Age Range</Text>
       <View style={styles.slider}>
         <MultiSlider
           values={[multiSliderValue[0], multiSliderValue[1]]}
           onValuesChange={multiSliderValuesChange}
-          min={18}
-          max={100}
+          min={setting.MIN_AGE}
+          max={setting.MAX_AGE}
           step={1}
           snapped
         />
@@ -81,10 +86,10 @@ export default function SettingsScreen() {
         onValueChange={(itemValue, itemIndex) => setSelectedLoc(itemValue)}
         itemStyle={styles.picker}
       >
-        <Picker.Item label="Asia" value="ASI" />
-        <Picker.Item label="Australia" value="AUS" />
-        <Picker.Item label="USA" value="USA" />
-        <Picker.Item label="Canada" value="CAN" />
+        <Picker.Item label="Asia" value={setting.ASIA} />
+        <Picker.Item label="Australia" value={setting.AUSTRALIA} />
+        <Picker.Item label="USA" value={setting.USA} />
+        <Picker.Item label="Canada" value={setting.CANADA} />
       </Picker>
     </ScrollView>
   );

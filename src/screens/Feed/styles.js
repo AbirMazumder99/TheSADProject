@@ -12,7 +12,6 @@ export default StyleSheet.create({
     flex: 1,
   },
   stackContainer: {
-    // paddingVertical: 200,
     backgroundColor: "blue",
   },
   title: {
@@ -30,13 +29,6 @@ export default StyleSheet.create({
     fontSize: 17,
     fontStyle: "italic",
     textAlign: "center",
-  },
-  slider: {
-    marginTop: 15,
-    overflow: "visible", // for custom animations
-  },
-  sliderContentContainer: {
-    paddingVertical: 10, // for custom animation
   },
   slide: {
     backgroundColor: "orange",

@@ -2,11 +2,13 @@ import React from "react";
 import { Image, Text, View, SafeAreaView, Dimensions } from "react-native";
 import styles from "./styles";
 import Carousel from "react-native-snap-carousel";
-// import SliderEntry from "react-native-snap-carousel/src/carousel/";
+import * as dim from "../../static/constants/dimConst";
 
 const SLIDER_WIDTH = Dimensions.get("window").width;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.95);
-const ITEM_HEIGHT = Math.round(Dimensions.get("window").height * 0.55);
+const ITEM_WIDTH = Math.round(SLIDER_WIDTH * dim.WIDTH_PERCENT);
+const ITEM_HEIGHT = Math.round(
+  Dimensions.get("window").height * dim.HEIGHT_PERCENT
+);
 
 //Dummy
 const ENTRIES = [
