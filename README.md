@@ -1,7 +1,7 @@
 # The S.A.D Project
 
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
-[![npm](https://img.shields.io/npm/v/react-native-snap-carousel.svg?style=flat-square)
+![npm](https://img.shields.io/npm/v/react-native-snap-carousel.svg?style=flat-square)
 
 ## Table of contents
 
@@ -13,12 +13,12 @@
 
 ## Showcase
 
-![react-native-snap-carousel default layout](/assets/Showcase/1.jpg)
-![react-native-snap-carousel tinder layout](/assets/Showcase/2.jpg))
-![react-native-snap-carousel stack layout](/assets/Showcase/3.jpg))
-![react-native-snap-carousel stack layout](/assets/Showcase/4.jpg))
-![react-native-snap-carousel stack layout](/assets/Showcase/5.jpg))
-![react-native-snap-carousel stack layout](/assets/Showcase/6.jpg))
+![SignUp](/assets/Showcase/1.jpg)
+![Profile](/assets/Showcase/2.jpg)
+![Edit](/assets/Showcase/3.jpg)
+![Settings](/assets/Showcase/4.jpg)
+![Feed](/assets/Showcase/5.jpg)
+![SignIn](/assets/Showcase/6.jpg)
 
 ## Environment-setup
 
