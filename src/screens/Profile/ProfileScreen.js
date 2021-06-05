@@ -4,11 +4,30 @@ import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import * as screens from "../../static/constants/navConst";
 import { useAuth } from "../../api/user/AuthContext";
+import { firebase } from "../../firebase/config";
 
 export default function ProfileScreen({ navigation }) {
   const { logout, currentUser, userData } = useAuth();
+  const [userName, setUsername] = useState("");
   const { remove } = useAuth();
+  const [avatar, setAvatar] = useState(null);
 
+  firebase
+    .firestore()
+    .collection("users")
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        if (doc.id === currentUser.uid) {
+          setUsername(data.fullName);
+          setAvatar(data.avatar);
+        }
+      });
+    })
+    .catch((err) => {
+      console.log("Error getting documents", err);
+    });
   const onSettingsPress = () => {
     navigation.navigate(screens.SETTINGS);
   };
@@ -18,13 +37,8 @@ export default function ProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={{ marginTop: 64, alignItems: "center" }}>
-        {/* <Image style={styles.avatar} source={this.state.user.avatar ? { uri: this.state.user.avatar } : require("../assets/authHeader.jpg")} /> */}
-        <Image
-          style={styles.avatar}
-          source={require("../../../assets/abir.jpg")}
-        />
-        {/* <Text style={styles.name}>{this.state.user.name}</Text> */}
-        <Text style={styles.name}>Abir Mazumder</Text>
+        <Image style={styles.avatarPlaceholder} source={{ uri: avatar }} />
+        <Text style={styles.name}>{userName}</Text>
       </View>
       <View style={styles.menuContainer}>
         <View style={styles.menu}>
@@ -40,10 +54,10 @@ export default function ProfileScreen({ navigation }) {
           <Text style={styles.menuTitle}>Edit</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} /** onPress={() => logout()}**/>
+      <TouchableOpacity style={styles.button} onPress={() => logout()}>
         <Text style={styles.buttonTitle}>Log Out</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} /**onPress={() => remove()}**/>
+      <TouchableOpacity style={styles.button} onPress={() => remove()}>
         <Text style={styles.buttonTitle}>Delete Account</Text>
       </TouchableOpacity>
     </View>

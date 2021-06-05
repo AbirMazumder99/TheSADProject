@@ -26,8 +26,6 @@ export default function SettingsScreen() {
       <Text style={styles.header}>Email Address</Text>
       <TextInput
         style={styles.input}
-        placeholder="E-mail"
-        placeholderTextColor="#aaaaaa"
         onChangeText={(text) => setEmail(text)}
         value={email}
         underlineColorAndroid="transparent"
@@ -36,8 +34,6 @@ export default function SettingsScreen() {
       <Text style={styles.header}>Phone Number</Text>
       <TextInput
         style={styles.input}
-        placeholder="Phone Number"
-        placeholderTextColor="#aaaaaa"
         onChangeText={(text) => setPhoneNumber(text)}
         value={phoneNumber}
         keyboardType="phone-pad"

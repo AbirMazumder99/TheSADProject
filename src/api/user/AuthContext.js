@@ -64,7 +64,7 @@ export function AuthProvider({ children }) {
   ////////////////////////////////////////
   //  AUTHENTICATION
   ///////////////////////////////////////
-  async function signup(email, password, confirmPassword, fullName) {
+  async function signup(email, password, confirmPassword, fullName, avatar) {
     if (password !== confirmPassword) {
       alert("Passwords don't match.");
       return;
@@ -78,6 +78,7 @@ export function AuthProvider({ children }) {
           id: uid,
           email,
           fullName,
+          avatar,
         };
         const usersRef = firebase.firestore().collection(fbCollections.USERS);
         usersRef
