@@ -15,7 +15,7 @@ import SignUpScreen from "./src/screens/Auth/SignUp/SignUpScreen";
 import ChatScreen from "./src/screens/Message/ChatScreen/ChatScreen";
 import EditScreen from "./src/screens/Edit/EditScreen";
 import SettingsScreen from "./src/screens/Settings/SettingsScreen";
-import Chats from "./src/screens/Message/Chats/Chats";
+import MessageScreen from "./src/screens/Message/MessageScreen/MessageScreen";
 // Constants
 import * as screens from "./src/static/constants/navConst";
 //Firebase API
@@ -47,16 +47,15 @@ function Home() {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name={screens.MESSAGE}
-        // component={ChatScreen}
-        component={Chats}
+        component={MessageScreen}
         options={{
           tabBarIcon: ({ tintColor }) => (
             <Ionicons name="chatbox-outline" size={24} color={tintColor} />
           ),
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 }

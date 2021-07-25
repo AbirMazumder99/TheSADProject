@@ -3,7 +3,6 @@ import TinderCard from "react-tinder-card";
 import styled from "styled-components";
 import { Button } from "react-native-paper";
 
-import SwipeButtons from "../Swipe/SwipeButtons";
 import styles from "./styles";
 // import db from "../../../firebase/config";
 import { View } from "react-native";
