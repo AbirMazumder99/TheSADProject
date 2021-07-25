@@ -8,7 +8,7 @@ import db from "../../../firebase/config";
 import { Button, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-const ChatScreen = ({ name, timestamp }) => {
+function MessageExchange({ name, timestamp }) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
@@ -108,6 +108,6 @@ const ChatScreen = ({ name, timestamp }) => {
       </View>
     </View>
   );
-};
+}
 
-export default ChatScreen;
+export default MessageExchange;

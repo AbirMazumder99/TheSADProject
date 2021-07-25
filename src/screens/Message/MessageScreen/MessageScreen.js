@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles";
 import Message from "../Message/Message";
 import db from "../../../firebase/config";
-import { View, TouchableOpacity } from "react-native";
-import { ScrollView, FlatList } from "react-native-gesture-handler";
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  FlatList,
+} from "react-native";
 function MessageScreen() {
   const [people, setPeople] = useState([]);
 
@@ -45,6 +50,13 @@ function MessageScreen() {
   return (
     <View style={styles.containerMessages}>
       <ScrollView>
+        <View style={styles.top}>
+          <Text style={styles.title}>Messages</Text>
+          <TouchableOpacity>
+            <Text style={styles.icon}>{/* <Icon name="optionsV" /> */}</Text>
+          </TouchableOpacity>
+        </View>
+
         <FlatList
           data={Demo}
           keyExtractor={(item, index) => index.toString()}

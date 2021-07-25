@@ -12,7 +12,7 @@ import FeedScreen from "./src/screens/Feed/FeedScreen";
 import ProfileScreen from "./src/screens/Profile/ProfileScreen";
 import LogInScreen from "./src/screens/Auth/LogIn/LogInScreen";
 import SignUpScreen from "./src/screens/Auth/SignUp/SignUpScreen";
-import ChatScreen from "./src/screens/Message/ChatScreen/ChatScreen";
+import ChatScreen from "./src/screens/Message/MessageExchange/MessageExchange";
 import EditScreen from "./src/screens/Edit/EditScreen";
 import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 import MessageScreen from "./src/screens/Message/MessageScreen/MessageScreen";
@@ -96,6 +96,7 @@ export default function App() {
           <Stack.Navigator
             screenOptions={{
               headerStyle: { backgroundColor: "hsla(165, 50%, 42%, 1.0)" },
+              headerShown: false,
             }}
           >
             <Stack.Screen name="Home" component={Home} />
