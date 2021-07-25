@@ -6,12 +6,7 @@ import { View, Text, Image } from "react-native";
 function Message({ name, lastMessage, image }) {
   return (
     <View style={styles.containerMessage}>
-      <Image
-        style={styles.avatar}
-        source={{
-          uri: image,
-        }}
-      />
+      <Image style={styles.avatar} source={image} />
       <View>
         <Text>{name}</Text>
         <Text style={styles.message}>{lastMessage}</Text>

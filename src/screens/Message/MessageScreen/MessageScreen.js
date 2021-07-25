@@ -27,24 +27,15 @@ function MessageScreen() {
   const Demo = [
     {
       id: 1,
-      name: "Labrador",
-      message: "Wuff",
-      image:
-        "https://gooddoggies.online/wp-content/uploads/2020/06/5-Tips-To-Training-A-Labrador-Puppy-1.jpg",
+      name: "Abir Mazumder",
+      message: "Hey!",
+      image: require("../../../../assets/abir.jpg"),
     },
     {
       id: 2,
-      name: "Shiba Inu",
-      message: "Bork",
-      image:
-        "https://thehappypuppysite.com/wp-content/uploads/2019/06/Mini-Shiba-Inu-HP-long.jpg",
-    },
-    {
-      id: 3,
-      name: "Corgi",
-      message: "Awooo",
-      image:
-        "https://i.pinimg.com/originals/cb/d4/1f/cbd41fb83c06a915a79ed0ab9ca63789.jpg",
+      name: "Ali Khan",
+      message: "You look great!",
+      image: require("../../../../assets/ali.jpg"),
     },
   ];
   return (

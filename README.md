@@ -20,6 +20,7 @@
 <img src="/assets/Showcase/4.jpg" width="300" height="500">
 <img src="/assets/Showcase/5.jpg" width="300" height="500">
 <img src="/assets/Showcase/6.jpg" width="300" height="500">
+<img src="/assets/Showcase/7.jpg" width="300" height="500">
 
 ## Environment-setup
 

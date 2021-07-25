@@ -67,20 +67,20 @@ const InfoText = styled.Text`
 
 const db = [
   {
-    name: "Richard Hendricks",
+    name: "Abir Mazumder",
     img: require("../../../../assets/abir.jpg"),
   },
   {
-    name: "Erlich Bachman",
-    img: require("../../../../assets/abir.jpg"),
+    name: "Ali Khan",
+    img: require("../../../../assets/ali.jpg"),
   },
   {
     name: "Monica Hall",
-    img: require("../../../../assets/abir.jpg"),
+    img: require("../../../../assets/abir2.jpg"),
   },
   {
     name: "Jared Dunn",
-    img: require("../../../../assets/abir.jpg"),
+    img: require("../../../../assets/ali2.jpg"),
   },
   {
     name: "Dinesh Chugtai",
