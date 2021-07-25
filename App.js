@@ -12,13 +12,12 @@ import FeedScreen from "./src/screens/Feed/FeedScreen";
 import ProfileScreen from "./src/screens/Profile/ProfileScreen";
 import LogInScreen from "./src/screens/Auth/LogIn/LogInScreen";
 import SignUpScreen from "./src/screens/Auth/SignUp/SignUpScreen";
-import MessageScreen from "./src/screens/Message/MessageScreen";
+import ChatScreen from "./src/screens/Message/ChatScreen/ChatScreen";
 import EditScreen from "./src/screens/Edit/EditScreen";
 import SettingsScreen from "./src/screens/Settings/SettingsScreen";
-
+import Chats from "./src/screens/Message/Chats/Chats";
 // Constants
 import * as screens from "./src/static/constants/navConst";
-
 //Firebase API
 import { firebase } from "./src/firebase/config";
 import { AuthProvider } from "./src/api/user/AuthContext";
@@ -48,15 +47,16 @@ function Home() {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name={screens.MESSAGE}
-        component={MessageScreen}
+        // component={ChatScreen}
+        component={Chats}
         options={{
           tabBarIcon: ({ tintColor }) => (
             <Ionicons name="chatbox-outline" size={24} color={tintColor} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
