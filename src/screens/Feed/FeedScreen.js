@@ -1,8 +1,7 @@
 import React from "react";
 import { Image, Text, View, SafeAreaView, Dimensions } from "react-native";
 import styles from "./styles";
-import Carousel from "react-native-snap-carousel";
-import TinderCards from "./Cards/TinderCards";
+import CardStack from "./CardStack/CardStack";
 import SwipeButtons from "./Swipe/SwipeButtons";
 import * as dim from "../../static/constants/dimConst";
 
@@ -62,20 +61,7 @@ export default function FeedScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <TinderCards />
-
-        {/* <Carousel
-          data={ENTRIES}
-          renderItem={_renderItem}
-          sliderWidth={SLIDER_WIDTH}
-          itemWidth={ITEM_WIDTH}
-          itemHeight={ITEM_HEIGHT}
-          layout="tinder"
-          loop={true}
-          // swipeThreshold={3}
-          // enableMomentum
-        /> */}
-        <SwipeButtons />
+        <CardStack />
       </View>
     </SafeAreaView>
   );

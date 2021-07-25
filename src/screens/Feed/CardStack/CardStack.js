@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import styled from "styled-components";
-import { Button } from "react-native";
+import { Button } from "react-native-paper";
 
+import SwipeButtons from "../Swipe/SwipeButtons";
 import styles from "./styles";
 // import db from "../../../firebase/config";
-import { View, Text, ImageBackground } from "react-native";
+import { View } from "react-native";
 
 const Container = styled.View`
   display: flex;
@@ -23,7 +24,7 @@ const Header = styled.Text`
 const CardContainer = styled.View`
   width: 90%;
   max-width: 260px;
-  height: 300px;
+  height: 450px;
 `;
 
 const Card = styled.View`
@@ -31,7 +32,7 @@ const Card = styled.View`
   background-color: #fff;
   width: 100%;
   max-width: 260px;
-  height: 300px;
+  height: 400px;
   shadow-color: black;
   shadow-opacity: 0.2;
   shadow-radius: 20px;
@@ -91,7 +92,7 @@ const db = [
 const alreadyRemoved = [];
 let charactersState = db; // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
-function TinderCards() {
+function CardStack() {
   const [characters, setCharacters] = useState(db);
   const [lastDirection, setLastDirection] = useState();
 
@@ -142,54 +143,77 @@ function TinderCards() {
   // }, []);
 
   return (
-    // <View style={styles.container}>
-    //   <View style={styles.tinderCards__cardContainer}>
-    //     {people.mapz((person) => (
-    //       <TinderCard
-    //         style={styles.swipe}
-    //         key={person.name}
-    //         preventSwipe={["up", "down"]}
-    //       >
-    //         {/* <ImageBackground
-    //           source={person.url}
-    //           resizeMode="cover"
-    //           style={styles.card}
-    //         > */}
-    //         <Text style={styles.cardHeader}>{person.name}</Text>
-    //         {/* </ImageBackground> */}
-    //       </TinderCard>
-    //     ))}
-    //   </View>
-    // </View>
-    <Container>
-      <Header>React Native Tinder Card</Header>
-      <CardContainer>
-        {characters.map((character, index) => (
-          <TinderCard
-            ref={childRefs[index]}
-            key={character.name}
-            onSwipe={(dir) => swiped(dir, character.name)}
-            onCardLeftScreen={() => outOfFrame(character.name)}
-          >
-            <Card>
-              <CardImage source={character.img}>
-                <CardTitle>{character.name}</CardTitle>
-              </CardImage>
-            </Card>
-          </TinderCard>
-        ))}
-      </CardContainer>
-      <Buttons>
-        <Button onPress={() => swipe("left")} title="Swipe left!" />
-        <Button onPress={() => swipe("right")} title="Swipe right!" />
-      </Buttons>
-      {lastDirection ? (
-        <InfoText key={lastDirection}>You swiped {lastDirection}</InfoText>
-      ) : (
-        <InfoText>Swipe a card or press a button to get started!</InfoText>
-      )}
-    </Container>
+    <View>
+      {/* CARD STACK */}
+      <Container>
+        {/* <Header>React Native Tinder Card</Header> */}
+        <CardContainer>
+          {characters.map((character, index) => (
+            <TinderCard
+              ref={childRefs[index]}
+              key={character.name}
+              onSwipe={(dir) => swiped(dir, character.name)}
+              onCardLeftScreen={() => outOfFrame(character.name)}
+            >
+              <Card>
+                <CardImage source={character.img}>
+                  <CardTitle>{character.name}</CardTitle>
+                </CardImage>
+              </Card>
+            </TinderCard>
+          ))}
+        </CardContainer>
+        {/* <Buttons>
+          <Button onPress={() => swipe("left")} title="Swipe left!" />
+          <Button onPress={() => swipe("right")} title="Swipe right!" />
+        </Buttons> */}
+        {lastDirection ? (
+          <InfoText key={lastDirection}>You swiped {lastDirection}</InfoText>
+        ) : (
+          <InfoText>Swipe a card or press a button to get started!</InfoText>
+        )}
+      </Container>
+
+      {/* BUTTONS */}
+      <View style={styles.buttonContainer}>
+        <Button
+          icon="replay"
+          color="#f5b748"
+          mode="contained"
+          compact
+          style={styles.buttons}
+          onPress={() => console.log("Pressed")}
+        />
+        <Button
+          icon="close"
+          color="#ec5e6f"
+          mode="contained"
+          compact
+          style={styles.buttons}
+          onPress={() => swipe("left")}
+          title="Swipe left!"
+        />
+        <Button
+          icon="star"
+          color="#62b4f9"
+          mode="contained"
+          compact
+          style={styles.buttons}
+          onPress={() => swipe("right")}
+          title="Swipe right!"
+        />
+        <Button
+          icon="heart"
+          color="#76e2b3"
+          mode="contained"
+          compact
+          style={styles.buttons}
+          onPress={() => swipe("right")}
+          title="Swipe right!"
+        />
+      </View>
+    </View>
   );
 }
 
-export default TinderCards;
+export default CardStack;
