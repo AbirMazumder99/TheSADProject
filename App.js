@@ -27,7 +27,7 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName={screens.PROFILE}>
       <Tab.Screen
         name={screens.FEED}
         component={FeedScreen}
@@ -61,33 +61,35 @@ function Home() {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+  const user = true;
 
-  useEffect(() => {
-    const usersRef = firebase.firestore().collection("users");
-    firebase.auth().onAuthStateChanged((newUser) => {
-      if (newUser) {
-        usersRef
-          .doc(newUser.uid)
-          .get()
-          .then((document) => {
-            const userData = document.data();
-            setLoading(false);
-            setUser(userData);
-          })
-          .catch((error) => {
-            setLoading(false);
-          });
-      } else {
-        setUser(null);
-        setLoading(false);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   const usersRef = firebase.firestore().collection("users");
+  //   firebase.auth().onAuthStateChanged((newUser) => {
+  //     if (newUser) {
+  //       usersRef
+  //         .doc(newUser.uid)
+  //         .get()
+  //         .then((document) => {
+  //           const userData = document.data();
+  //           setLoading(false);
+  //           setUser(userData);
+  //         })
+  //         .catch((error) => {
+  //           setLoading(false);
+  //         });
+  //     } else {
+  //       setUser(null);
+  //       setLoading(false);
+  //     }
+  //   });
+  // }, []);
 
-  if (loading) {
-    return <></>;
-  }
+  // if (loading) {
+  //   return <></>;
+  // }
+
   return (
     <NavigationContainer>
       <AuthProvider>

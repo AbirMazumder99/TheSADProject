@@ -21,7 +21,7 @@ export default function ProfileScreen({ navigation }) {
         const data = doc.data();
         if (doc.id === currentUser.uid) {
           setUsername(data.fullName);
-          setAvatar(data.avatar);
+          // setAvatar(data.avatar);
         }
       });
     })
@@ -37,7 +37,12 @@ export default function ProfileScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={{ marginTop: 64, alignItems: "center" }}>
-        <Image style={styles.avatarPlaceholder} source={{ uri: avatar }} />
+        {/* <Image style={styles.avatarPlaceholder} source={{ uri: avatar }} /> */}
+        <Image
+          style={styles.avatarPlaceholder}
+          source={require("../../../assets/abir.jpg")}
+        />
+
         <Text style={styles.name}>{userName}</Text>
       </View>
       <View style={styles.menuContainer}>
