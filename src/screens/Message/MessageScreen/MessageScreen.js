@@ -41,13 +41,6 @@ function MessageScreen() {
   return (
     <View style={styles.containerMessages}>
       <ScrollView>
-        <View style={styles.top}>
-          <Text style={styles.title}>Messages</Text>
-          <TouchableOpacity>
-            <Text style={styles.icon}>{/* <Icon name="optionsV" /> */}</Text>
-          </TouchableOpacity>
-        </View>
-
         <FlatList
           data={Demo}
           keyExtractor={(item, index) => index.toString()}

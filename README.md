@@ -39,11 +39,6 @@ $ npm start
 1. Profile -> my Bio
 1. SAD Auction Format (keep separate boxes), TextBox for most of them, Looking for TextBox. Image Add (no limit), Image Remove, Image size (Rectangle)
 1. Create Form within Profile
-1. Profile -> Preview
-1. remove distance
-1. remove location
-1. shorten bar range to 18 - 60+
-1. Keep it strictly for Asians
 
 1. DATABASE
 

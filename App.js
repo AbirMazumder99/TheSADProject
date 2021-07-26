@@ -11,10 +11,10 @@ import { Ionicons } from "@expo/vector-icons";
 import FeedScreen from "./src/screens/Feed/FeedScreen";
 import ProfileScreen from "./src/screens/Profile/ProfileScreen";
 import LogInScreen from "./src/screens/Auth/LogIn/LogInScreen";
-import SignUpScreen from "./src/screens/Auth/SignUp/SignUpScreen";
 import EditScreen from "./src/screens/Edit/EditScreen";
 import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 import MessageScreen from "./src/screens/Message/MessageScreen/MessageScreen";
+import PreviewScreen from "./src/screens/Preview/PreviewScreen";
 // Constants
 import * as screens from "./src/static/constants/navConst";
 //Firebase API
@@ -97,12 +97,12 @@ export default function App() {
           <Stack.Navigator
             screenOptions={{
               headerStyle: { backgroundColor: "hsla(165, 50%, 42%, 1.0)" },
-              // headerShown: false,
             }}
           >
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name={screens.EDIT} component={EditScreen} />
             <Stack.Screen name={screens.SETTINGS} component={SettingsScreen} />
+            <Stack.Screen name={screens.PREVIEW} component={PreviewScreen} />
           </Stack.Navigator>
         ) : (
           <Stack.Navigator

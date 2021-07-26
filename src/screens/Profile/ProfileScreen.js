@@ -34,6 +34,9 @@ export default function ProfileScreen({ navigation }) {
   const onEditPress = () => {
     navigation.navigate(screens.EDIT);
   };
+  const onPreviewPress = () => {
+    navigation.navigate(screens.PREVIEW);
+  };
   return (
     <View style={styles.container}>
       <View style={{ marginTop: 64, alignItems: "center" }}>
@@ -57,6 +60,12 @@ export default function ProfileScreen({ navigation }) {
             <Ionicons name="pencil" size={30} />
           </TouchableOpacity>
           <Text style={styles.menuTitle}>Edit</Text>
+        </View>
+        <View style={styles.menu}>
+          <TouchableOpacity style={styles.menuIcon} onPress={onPreviewPress}>
+            <Ionicons name="eye" size={30} />
+          </TouchableOpacity>
+          <Text style={styles.menuTitle}>Preview</Text>
         </View>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => logout()}>

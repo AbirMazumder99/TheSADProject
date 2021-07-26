@@ -5,3 +5,4 @@ export const EDIT = "Edit";
 export const SETTINGS = "Settings";
 export const LOGIN = "LogIn";
 export const SIGNUP = "SignUp";
+export const PREVIEW = "Preview";

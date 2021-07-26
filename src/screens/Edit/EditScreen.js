@@ -18,6 +18,7 @@ export default function SettingsScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.stage}>
+      {/* INCLUDE ADDITION & DELETION OF PICTURES AND GET RID OF ADDITION OF PICTURES */}
       <View style={styles.imageItem}>
         {/* <Image style={styles.avatar} source={this.state.user.avatar ? { uri: this.state.user.avatar } : require("../assets/authHeader.jpg")} /> */}
         <Image
@@ -41,7 +42,7 @@ export default function SettingsScreen() {
         />
       </View>
 
-      <Text style={styles.header}>My Bio</Text>
+      <Text style={styles.header}>Short Bio</Text>
       <TextInput
         style={styles.input}
         placeholder="Write something cool!"
@@ -50,7 +51,9 @@ export default function SettingsScreen() {
         value={bio}
         underlineColorAndroid="transparent"
       />
-      <Text style={styles.header}>Living In</Text>
+
+      {/* INCLUDE THE REST IN A FORM COMPONENT */}
+      {/* <Text style={styles.header}>Living In</Text>
       <TouchableOpacity
         style={{ padding: 20, backgroundColor: "orange", borderRadius: 10 }}
       >
@@ -75,7 +78,7 @@ export default function SettingsScreen() {
         <Picker.Item label="Straight" value="S" />
         <Picker.Item label="Bisexual" value="B" />
         <Picker.Item label="Other" value="O" />
-      </Picker>
+      </Picker> */}
     </ScrollView>
   );
 }

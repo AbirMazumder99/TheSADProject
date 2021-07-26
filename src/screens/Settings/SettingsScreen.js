@@ -5,14 +5,11 @@ import MultiSlider from "@ptomasroos/react-native-multi-slider";
 import * as setting from "../../static/constants/settingsConst";
 
 import styles from "./styles";
-import { set } from "react-native-reanimated";
 
 export default function SettingsScreen() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [selectedPref, setSelectedPref] = useState();
-  const [selectedDist, setSelectedDist] = useState();
-  const [selectedLoc, setSelectedLoc] = useState();
 
   // Age Range
   const [multiSliderValue, setMultiSliderValue] = useState([
@@ -40,7 +37,7 @@ export default function SettingsScreen() {
         underlineColorAndroid="transparent"
         autoCapitalize="none"
       />
-      <Text style={styles.header}>Show Me</Text>
+      <Text style={styles.header}>Preference</Text>
       <Picker
         selectedValue={selectedPref}
         onValueChange={(itemValue, itemIndex) => setSelectedPref(itemValue)}
@@ -49,17 +46,6 @@ export default function SettingsScreen() {
         <Picker.Item label="Everyone" value={setting.EVERONE} />
         <Picker.Item label="Men" value={setting.MEN} />
         <Picker.Item label="Women" value={setting.WOMEN} />
-      </Picker>
-      <Text style={styles.header}>Max Distance</Text>
-      <Picker
-        selectedValue={selectedDist}
-        onValueChange={(itemValue, itemIndex) => setSelectedDist(itemValue)}
-        itemStyle={styles.picker}
-      >
-        <Picker.Item label="10 mi." value={setting.DIST10} />
-        <Picker.Item label="25 mi." value={setting.DIST25} />
-        <Picker.Item label="50 mi." value={setting.DIST50} />
-        <Picker.Item label="100 mi." value={setting.DIST100} />
       </Picker>
       <Text style={styles.header}>Age Range</Text>
       <View style={styles.slider}>
@@ -73,20 +59,11 @@ export default function SettingsScreen() {
         />
         <View style={styles.sliderText}>
           <Text>{multiSliderValue[0]}</Text>
-          <Text>{multiSliderValue[1]}</Text>
+          <Text>
+            {multiSliderValue[1] + (multiSliderValue[1] >= 60 ? "+" : "")}
+          </Text>
         </View>
       </View>
-      <Text style={styles.header}>Location</Text>
-      <Picker
-        selectedValue={selectedLoc}
-        onValueChange={(itemValue, itemIndex) => setSelectedLoc(itemValue)}
-        itemStyle={styles.picker}
-      >
-        <Picker.Item label="Asia" value={setting.ASIA} />
-        <Picker.Item label="Australia" value={setting.AUSTRALIA} />
-        <Picker.Item label="USA" value={setting.USA} />
-        <Picker.Item label="Canada" value={setting.CANADA} />
-      </Picker>
     </ScrollView>
   );
 }

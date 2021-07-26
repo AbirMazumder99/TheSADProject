@@ -1,5 +1,5 @@
 export const MIN_AGE = 18;
-export const MAX_AGE = 100;
+export const MAX_AGE = 60;
 export const EVERONE = "E";
 export const MEN = "M";
 export const WOMEN = "W";
