@@ -120,7 +120,7 @@ export default function App() {
                 },
               }}
             />
-            <Stack.Screen
+            {/* <Stack.Screen
               name={screens.SIGNUP}
               component={SignUpScreen}
               options={{
@@ -131,7 +131,7 @@ export default function App() {
                   fontSize: 25,
                 },
               }}
-            />
+            /> */}
           </Stack.Navigator>
         )}
       </AuthProvider>
