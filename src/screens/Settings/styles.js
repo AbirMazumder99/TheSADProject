@@ -7,6 +7,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   header: {
+    paddingTop: 10,
     fontSize: 15,
     color: "black",
     fontWeight: "bold",

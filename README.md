@@ -32,7 +32,6 @@ $ npm start
 
 ## Feature-considerations
 
-1. Get rid of SignUp Screen
 1. Just keep SignIn screen and check if you are a part of Facebook Group S.A.D. Utilize Groups API for verification
 1. go to profile section (first time users -> fb profile pic fetch)
 

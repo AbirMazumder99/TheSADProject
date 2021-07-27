@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
 import * as setting from "../../static/constants/settingsConst";
+import { TextInput, Chip } from "react-native-paper";
 
 import styles from "./styles";
 
@@ -20,23 +21,20 @@ export default function SettingsScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.stage}>
-      <Text style={styles.header}>Email Address</Text>
       <TextInput
-        style={styles.input}
+        mode="outlined"
+        label="Email Address"
         onChangeText={(text) => setEmail(text)}
         value={email}
-        underlineColorAndroid="transparent"
-        autoCapitalize="none"
       />
-      <Text style={styles.header}>Phone Number</Text>
       <TextInput
-        style={styles.input}
+        mode="outlined"
+        label="Phone Number"
         onChangeText={(text) => setPhoneNumber(text)}
         value={phoneNumber}
         keyboardType="phone-pad"
-        underlineColorAndroid="transparent"
-        autoCapitalize="none"
       />
+
       <Text style={styles.header}>Preference</Text>
       <Picker
         selectedValue={selectedPref}
