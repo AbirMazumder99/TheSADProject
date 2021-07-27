@@ -26,7 +26,6 @@
 
 ```bash
 $ npm install -g expo-cli
-$ expo init SAD
 $ npm start
 ```
 
