@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Image, ScrollView, View, Button } from "react-native";
+import {
+  Image,
+  ScrollView,
+  View,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 // import { Picker } from "@react-native-picker/picker";
 import { TextInput } from "react-native-paper";
 import styles from "./styles";
 import * as ImagePicker from "expo-image-picker";
-import ImageUploading from "react-images-uploading";
-import ImageUpload from "./ImageUpload";
+import { Avatar } from "react-native-paper";
+
 export default function SettingsScreen() {
   const [lookingFor, setlookingFor] = useState("");
   const [pros, setPros] = useState("");
@@ -19,8 +25,10 @@ export default function SettingsScreen() {
   const [language, setLanguage] = useState("");
   const [hobbies, setHobbies] = useState("");
 
-  const [image, setImage] = useState(null);
-
+  const [images, setImages] = useState([]);
+  const imageList = [
+    "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQU2JRbbl3LBOm_an3eI5iplFhOoLESyBwUfmWDO49BS1EYuGUE",
+  ];
   // useEffect(() => {
   //   (async () => {
   //     if (Platform.OS !== "web") {
@@ -45,6 +53,7 @@ export default function SettingsScreen() {
       return true;
     }
   };
+
   const pickImage = async () => {
     if (checkForCameraRollPermission) {
       let result = await ImagePicker.launchImageLibraryAsync({
@@ -57,24 +66,11 @@ export default function SettingsScreen() {
       console.log(result);
 
       if (!result.cancelled) {
-        setImage(result.uri);
+        imageList.push(result.uri);
+        setImages(imageList);
       }
     }
   };
-
-  const imageList = [
-    {
-      index: 1,
-      data_url:
-        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQU2JRbbl3LBOm_an3eI5iplFhOoLESyBwUfmWDO49BS1EYuGUE",
-    },
-    {
-      index: 2,
-      data_url:
-        "https://image.cnbcfm.com/api/v1/image/106806369-1607089960317-gettyimages-1229901686-GERMANY_MUSK.jpeg?v=1607090009",
-    },
-  ];
-  const [images, setImages] = useState([]);
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     console.log(imageList, addUpdateIndex);
@@ -93,7 +89,7 @@ export default function SettingsScreen() {
   return (
     <ScrollView contentContainerStyle={styles.stage}>
       <View style={styles.imageContainer}>
-        <Button title="Add" onPress={onImageUpload} />
+        {/* <Button title="Add" onPress={onImageUpload} />
         {imageList.map((image, index) => (
           <View key={index}>
             <Image source={{ uri: image.data_url }} />
@@ -102,14 +98,37 @@ export default function SettingsScreen() {
               <Button title="Remove" onPress={() => onImageRemove(index)} />
             </View>
           </View>
-        ))}
-        {/* <Button title="Pick an image from camera roll" onPress={pickImage} />
-        {image && <Image source={{ uri: image }} style={styles.imageItem} />} */}
+        ))} */}
+
+        <TouchableOpacity style={styles.imageItem} onPress={pickImage}>
+          {/* {image ? (
+            <Image source={{ uri: image }} style={styles.imageItem} />
+          ) : (
+            <Avatar.Icon
+              style={{ backgroundColor: "lightgray" }}
+              size={65}
+              icon="camera"
+            />
+          )} */}
+          <Avatar.Icon
+            style={{ backgroundColor: "lightgray" }}
+            size={65}
+            icon="camera"
+          />
+        </TouchableOpacity>
+        <FlatList
+          // numColumns={3}
+          data={images}
+          // keyExtractor={(item, index) => item.key}
+          renderItem={({ item, index }) => (
+            <Image source={{ uri: item }} style={styles.imageItem} />
+          )}
+        />
         {/* <Image
           style={styles.imageItem}
           source={require("../../../assets/abir.jpg")}
-        /> */}
-        {/* <Image
+        />
+        <Image
           style={styles.imageItem}
           source={require("../../../assets/abir.jpg")}
         />

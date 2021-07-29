@@ -14,14 +14,15 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 10,
-    padding: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
   imageContainer: {
     flex: 1,
     flexWrap: "wrap",
     marginTop: 5,
     backgroundColor: "aliceblue",
-    maxHeight: 500,
+    maxHeight: 300,
     alignContent: "space-around",
   },
 });
