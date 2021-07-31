@@ -10,19 +10,28 @@ export default StyleSheet.create({
     backgroundColor: "#EFEFF4",
     padding: 15,
   },
-  imageItem: {
-    width: 100,
-    height: 100,
+  uploadItem: {
+    width: 150,
+    height: 150,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "red",
+  },
+  imageItem: {
+    width: 150,
+    height: 150,
+    borderRadius: 10,
+
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   imageContainer: {
     flex: 1,
     flexWrap: "wrap",
     marginTop: 5,
     backgroundColor: "aliceblue",
-    maxHeight: 300,
+    maxHeight: 400,
     alignContent: "space-around",
   },
 });

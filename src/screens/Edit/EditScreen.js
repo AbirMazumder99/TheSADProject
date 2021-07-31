@@ -27,7 +27,7 @@ export default function SettingsScreen() {
 
   const [images, setImages] = useState([]);
   const imageList = [
-    "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQU2JRbbl3LBOm_an3eI5iplFhOoLESyBwUfmWDO49BS1EYuGUE",
+    // "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQU2JRbbl3LBOm_an3eI5iplFhOoLESyBwUfmWDO49BS1EYuGUE",
   ];
   // useEffect(() => {
   //   (async () => {
@@ -86,6 +86,9 @@ export default function SettingsScreen() {
     console.log("remove");
   };
 
+  const removeImage = async () => {
+    console.log("REMOVE");
+  };
   return (
     <ScrollView contentContainerStyle={styles.stage}>
       <View style={styles.imageContainer}>
@@ -99,9 +102,41 @@ export default function SettingsScreen() {
             </View>
           </View>
         ))} */}
+        {/* UPLOAD AVATAR */}
+        <View style={styles.uploadItem}>
+          <TouchableOpacity onPress={pickImage}>
+            <Avatar.Icon
+              style={{ backgroundColor: "lightgray" }}
+              size={65}
+              icon="camera"
+            />
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity style={styles.imageItem} onPress={pickImage}>
-          {/* {image ? (
+        <FlatList
+          // numColumns={3}
+          data={images}
+          // keyExtractor={(item, index) => item.key}
+          renderItem={({ item, index }) => (
+            // <Image source={{ uri: item }} style={styles.imageItem} />
+            <View style={styles.imageItem}>
+              <Image source={{ uri: item }} />
+
+              <TouchableOpacity
+                style={{ alignSelf: "flex-end" }}
+                onPress={removeImage}
+              >
+                <Avatar.Icon
+                  onPress={removeImage}
+                  style={{ backgroundColor: "red" }}
+                  size={25}
+                  icon="close"
+                />
+              </TouchableOpacity>
+            </View>
+          )}
+        />
+        {/* {image ? (
             <Image source={{ uri: image }} style={styles.imageItem} />
           ) : (
             <Avatar.Icon
@@ -110,20 +145,7 @@ export default function SettingsScreen() {
               icon="camera"
             />
           )} */}
-          <Avatar.Icon
-            style={{ backgroundColor: "lightgray" }}
-            size={65}
-            icon="camera"
-          />
-        </TouchableOpacity>
-        <FlatList
-          // numColumns={3}
-          data={images}
-          // keyExtractor={(item, index) => item.key}
-          renderItem={({ item, index }) => (
-            <Image source={{ uri: item }} style={styles.imageItem} />
-          )}
-        />
+
         {/* <Image
           style={styles.imageItem}
           source={require("../../../assets/abir.jpg")}
