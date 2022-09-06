@@ -44,7 +44,7 @@ $ npm start
 1. shorten bar range to 18 - 60+
 1. Keep it strictly for Asians
 
-1. DATABASE
+1. DATABASE (Consider SQL)
 
 1. users collection - authenticated users -> profile collection
 
